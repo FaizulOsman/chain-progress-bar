@@ -1,0 +1,232 @@
+/* ===========================  =========================== */
+.container {
+  width: 70%;
+  padding-top: 100px;
+  margin: 0 auto;
+}
+.progressbar li {
+  list-style: none;
+  display: inline-block;
+  width: 5%;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+}
+.progressbar li:before {
+  content: counter(step);
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #ddd;
+  border-radius: 100%;
+  display: block;
+  text-align: center;
+  margin: 0 auto 10px auto;
+  background-color: #fff;
+}
+.progressbar li:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #ddd;
+  top: 15px;
+  left: -50%;
+  z-index: -1;
+}
+.progressbar li:first-child:after {
+  content: none;
+}
+.progressbar li.active {
+  color: green;
+}
+.progressbar li.active:before {
+  border-color: green;
+}
+.progressbar li.active + li:after {
+  background-color: green;
+}
+.verticalGap {
+  margin-bottom: 20px;
+}
+
+/* ////////// Increment1 ///////// */
+.progressbar-increment1 {
+  counter-reset: step;
+}
+.progressbar-increment1 li:before {
+  counter-increment: step;
+}
+/* ///////// Decrement1 /////////// */
+.progressbar-decrement1 {
+  counter-reset: step 41;
+}
+.progressbar-decrement1 li:before {
+  counter-increment: step -1;
+}
+/* ////////// Increment2 ///////// */
+.progressbar-increment2 {
+  counter-reset: step 40;
+}
+.progressbar-increment2 li:before {
+  counter-increment: step;
+}
+/* ///////// Decrement2 /////////// */
+.progressbar-decrement2 {
+  counter-reset: step 81;
+}
+.progressbar-decrement2 li:before {
+  counter-increment: step -1;
+}
+
+/* ////////// Increment3 ///////// */
+.progressbar-increment3 {
+  counter-reset: step 80;
+}
+.progressbar-increment3 li:before {
+  counter-increment: step;
+}
+/* ///////// Decrement3 /////////// */
+.progressbar-decrement3 {
+  counter-reset: step 121;
+}
+.progressbar-decrement3 li:before {
+  counter-increment: step -1;
+}
+
+/* ////////// Increment4 ///////// */
+.progressbar-increment4 {
+  counter-reset: step 120;
+}
+.progressbar-increment4 li:before {
+  counter-increment: step;
+}
+/* ///////// Decrement4 /////////// */
+.progressbar-decrement4 {
+  counter-reset: step 161;
+}
+.progressbar-decrement4 li:before {
+  counter-increment: step -1;
+}
+
+/* ////////// Increment5 ///////// */
+.progressbar-increment5 {
+  counter-reset: step 160;
+}
+.progressbar-increment5 li:before {
+  counter-increment: step;
+}
+/* ///////// Decrement5 /////////// */
+.progressbar-decrement5 {
+  counter-reset: step 201;
+}
+.progressbar-decrement5 li:before {
+  counter-increment: step -1;
+}
+
+/* ////////// Increment6 ///////// */
+.progressbar-increment6 {
+  counter-reset: step 200;
+}
+.progressbar-increment6 li:before {
+  counter-increment: step;
+}
+/* ///////// Decrement6 /////////// */
+.progressbar-decrement6 {
+  counter-reset: step 241;
+}
+.progressbar-decrement6 li:before {
+  counter-increment: step -1;
+}
+
+/* ////////// Increment7 ///////// */
+.progressbar-increment7 {
+  counter-reset: step 240;
+}
+.progressbar-increment7 li:before {
+  counter-increment: step;
+}
+
+/* ================= Vertical Line ================= */
+.progressbar {
+  position: relative;
+}
+.lastVerticalLine:after {
+  content: "";
+  width: 0;
+  height: 30px;
+  position: absolute;
+  top: 30px;
+  right: 28px;
+}
+.firstVerticalLine:after {
+  content: "";
+  width: 0;
+  height: 30px;
+  position: absolute;
+  top: 30px;
+  left: 28px;
+}
+.verticalActive:after {
+  border: 1px solid green;
+}
+.verticalInactive:after {
+  border: 1px solid #bbb;
+}
+
+/* =============== Tooltip =============== */
+.tooltip-container {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip {
+  opacity: 0;
+  z-index: 99;
+  color: #bbb;
+  width: 70px;
+  display: block;
+  font-size: 11px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  text-align: center;
+  text-shadow: 1px 1px 2px #111;
+  background: rgba(51, 51, 51, 0.9);
+  border: 1px solid rgba(34, 34, 34, 0.9);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -o-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  position: absolute;
+  left: -10%;
+  bottom: 50px;
+}
+
+.tooltip:before,
+.tooltip:after {
+  content: "";
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid rgba(51, 51, 51, 0.9);
+  position: absolute;
+  bottom: -10px;
+  left: 35%;
+}
+
+.tooltip-container:hover .tooltip,
+a:hover .tooltip {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
