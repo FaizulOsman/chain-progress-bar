@@ -223,7 +223,7 @@ function App() {
           <span class="tooltip">
             <img
               src={require("./assets/a.png")}
-              style={{ width: "100px", height: "50px" }}
+              style={{ width: "50px", height: "50px" }}
             />
           </span>
         </li> */}
